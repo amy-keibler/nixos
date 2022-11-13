@@ -84,7 +84,7 @@
     calibre
     direnv
     discord
-    dust
+    du-dust
     emacs
     feh
     ffmpeg
