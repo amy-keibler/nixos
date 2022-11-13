@@ -84,6 +84,7 @@
     calibre
     direnv
     discord
+    dust
     emacs
     feh
     ffmpeg
@@ -102,7 +103,6 @@
     vim
     vlc
     wget
-    zola
   ];
 
   fonts.fonts = with pkgs; [
