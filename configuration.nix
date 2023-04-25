@@ -6,10 +6,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    binaryCaches = [ "https://hydra.iohk.io"];
-    trustedBinaryCaches = [ "https://hydra.iohk.io" ];
-    binaryCachePublicKeys = [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
-    autoOptimiseStore = true;
+    settings.auto-optimise-store = true;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -104,6 +101,7 @@
     vim
     vlc
     wget
+    zoom
   ];
 
   fonts.fonts = with pkgs; [
@@ -125,8 +123,8 @@
   '';
 
   services.openssh.enable = true;
-  services.openssh.permitRootLogin = "no";
-  services.openssh.passwordAuthentication = false;
+  services.openssh.settings.permitRootLogin = "no";
+  services.openssh.settings.passwordAuthentication = false;
 
   virtualisation.containers = {
     enable = true;
