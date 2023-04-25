@@ -101,7 +101,7 @@
     vim
     vlc
     wget
-    zoom
+    zoom-us
   ];
 
   fonts.fonts = with pkgs; [
