@@ -26,6 +26,7 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
+  networking.networkmanager.enable = true;
   networking.useDHCP = false;
   networking.interfaces.enp1s0.useDHCP = true;
 
@@ -67,11 +68,24 @@
   ];
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
 
   users.users.amy = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO/PY5G1vwrxu4agNvVaDixP6KlOGACxyaKwHjoZUfys jane@jane_laptop"
     ];
@@ -104,7 +118,7 @@
     zoom-us
   ];
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-emoji
     fira-code
@@ -123,12 +137,9 @@
   '';
 
   services.openssh.enable = true;
-  services.openssh.settings.permitRootLogin = "no";
-  services.openssh.settings.passwordAuthentication = false;
+  services.openssh.settings.PermitRootLogin = "no";
+  services.openssh.settings.PasswordAuthentication = false;
 
-  virtualisation.containers = {
-    enable = true;
-  };
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
@@ -157,5 +168,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.09"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 }
