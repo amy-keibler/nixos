@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   nix = {
@@ -57,8 +57,8 @@
         ];
       };
     };
-    displayManager.defaultSession = "xfce+xmonad";
   };
+  services.displayManager.defaultSession = "xfce+xmonad";
 
   services.printing.enable = true;
   services.printing.drivers = [
@@ -130,6 +130,9 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+    
+    # Required for having multiple DEs installed
+    pinentryPackage = lib.mkForce pkgs.pinentry-qt;
   };
 
   programs.bash.promptInit = ''
@@ -149,7 +152,7 @@
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
 
     publish = {
       enable = true;
