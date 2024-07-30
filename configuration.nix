@@ -2,7 +2,7 @@
 
 {
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -67,7 +67,6 @@
     pkgs.hplip
   ];
 
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -107,6 +106,7 @@
     inkscape
     ispell
     ncdu
+    obsidian
     pydf
     ripgrep
     shutter
