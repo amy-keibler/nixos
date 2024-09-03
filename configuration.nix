@@ -93,7 +93,6 @@
   environment.systemPackages = with pkgs; [
     audacity
     calibre
-    direnv
     discord
     du-dust
     emacs
@@ -111,7 +110,6 @@
     ripgrep
     shutter
     slack
-    starship
     vim
     vlc
     wget
