@@ -101,6 +101,7 @@
     firefox
     gimp
     git
+    git-lfs
     htop
     inkscape
     ispell
