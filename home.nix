@@ -8,6 +8,10 @@ rec {
   home.username = "amy";
   home.homeDirectory = "/home/amy";
 
+  home.packages = with pkgs; [
+    
+  ];
+
   programs.bash = {
     enable = true;
 
