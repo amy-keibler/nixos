@@ -44,7 +44,7 @@
         enableXfwm = false;
       };
 
-      plasma5.enable = true;
+      plasma6.enable = true;
     };
     windowManager = {
       xmonad = {
