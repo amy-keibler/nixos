@@ -11,7 +11,9 @@
     fontconfig
     gnugrep
     mdl
-    nerdfonts
+    nerd-fonts.fira-mono
+    nerd-fonts.fira-code
+    nerd-fonts.symbols-only
     pandoc
     ripgrep
     shellcheck

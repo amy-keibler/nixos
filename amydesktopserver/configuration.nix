@@ -90,6 +90,8 @@
     ];
   };
 
+  users.groups.media = { };
+
   environment.systemPackages = with pkgs; [
     audacity
     calibre
@@ -110,6 +112,7 @@
     pydf
     ripgrep
     shutter
+    signal-desktop
     slack
     vim
     vlc
@@ -163,6 +166,10 @@
   };
 
   services.tailscale.enable = true;
+  services.jellyfin = {
+    enable = true;
+    group = "media";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
