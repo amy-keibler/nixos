@@ -43,8 +43,6 @@
         noDesktop = true;
         enableXfwm = false;
       };
-
-      plasma6.enable = true;
     };
     windowManager = {
       xmonad = {
@@ -58,6 +56,9 @@
       };
     };
   };
+  services.desktopManager = {
+    plasma6.enable = true;
+  };
   services.displayManager.defaultSession = "xfce+xmonad";
 
   services.printing.enable = true;
@@ -67,7 +68,7 @@
     pkgs.hplip
   ];
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -93,7 +94,7 @@
   users.groups.media = { };
 
   environment.systemPackages = with pkgs; [
-    audacity
+    # audacity
     calibre
     discord
     du-dust
