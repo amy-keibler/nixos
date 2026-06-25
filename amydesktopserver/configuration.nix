@@ -97,7 +97,7 @@
     # audacity
     calibre
     discord
-    du-dust
+    dust
     emacs
     feh
     ffmpeg
@@ -108,6 +108,7 @@
     htop
     inkscape
     ispell
+    kickstart
     ncdu
     obsidian
     pydf
@@ -123,7 +124,7 @@
 
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     fira-code
     fira-code-symbols
     source-code-pro

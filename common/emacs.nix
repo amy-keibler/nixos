@@ -22,6 +22,10 @@
     cargo
     rustc
     rustfmt
+
+    # Typst support
+    typst
+    tree-sitter-grammars.tree-sitter-typst
   ];
 
   home.file = {
@@ -32,5 +36,8 @@
 
   fonts.fontconfig.enable = true;
 
-  home.sessionVariables.FONTCONFIG_FILE = "${pkgs.fontconfig.out}/etc/fonts/fonts.conf";
+  home.sessionVariables = {
+      FONTCONFIG_FILE = "${pkgs.fontconfig.out}/etc/fonts/fonts.conf";
+      TYPST_TREE_SITTER_LIB = "${pkgs.tree-sitter-grammars.tree-sitter-typst}";
+  };
 }

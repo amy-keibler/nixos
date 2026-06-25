@@ -82,3 +82,9 @@
 ;; (after! apheleia
 ;; (setf (alist-get 'rustfmt apheleia-formatters)
 ;; '("apheleia-from-project-root" "Cargo.lock" "cargo" "--quiet" "fmt" "--" "--quiet" "--emit" "stdout")))
+(use-package! typst-ts-mode
+  :hook typst-ts-mode
+  :init
+  (message "Loaded typst-ts-mode")
+  :custom
+  (typst-ts-mode-grammar-location (get-env "TYPST_TREE_SITTER_LIB"))
